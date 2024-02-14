@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  node-server:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    image: "postgres:latest"
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "18020526"
+      POSTGRES_DB: "gameet"
+
+    volumes:
+      - data:/data/db
+
+volumes:
+  data:
