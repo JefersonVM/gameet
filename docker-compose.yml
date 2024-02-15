@@ -10,10 +10,8 @@ services:
     image: "postgres:latest"
     ports:
       - "5433:5432"
-    environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "18020526"
-      POSTGRES_DB: "gameet"
+    env_file:
+      - ./config/db.env
 
     volumes:
       - data:/data/db
