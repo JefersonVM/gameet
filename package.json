@@ -8,10 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "yarn && node server.js",
     "predev": "yarn && yarn docker-up",
-    "docker-up": "docker-compose -f docker-compose-dev.yml up -d",
-    "postdocker-up": "sleep 5 && yarn run-migration",
-    "run-migration": "yarn sequelize db:migrate",
-    "docker-down": "docker-compose -f docker-compose-dev.yml down",
+    "docker-up": "docker-compose -f docker-compose.yml up -d",
+    "docker-down": "docker-compose -f docker-compose.yml down",
     "dev:debug": "nodemon --inspect src/server.js"
   },
   "keywords": [],
